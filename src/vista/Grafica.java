@@ -3,21 +3,38 @@ package vista;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 import java.awt.geom.Line2D;
 
 public class Grafica extends JFrame {
-    private int numeroVectores;
+    private double[] angulos;
 
-    public Grafica() {
+    public Grafica(double[] angulos) {
         setTitle("Vectores en el plano cartesiano");
         setSize(400, 400);
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setLocationRelativeTo(null);
-    }
 
-    public void setNumeroVectores(int numeroVectores) {
-        this.numeroVectores = numeroVectores;
-        repaint(); // Vuelve a dibujar la gráfica con el nuevo número de vectores
+        // Establecer el comportamiento de cierre sin cerrar la aplicación
+        setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+
+        setLocation(null);
+
+        // Asegurarse de que haya al menos dos ángulos para graficar
+        if (angulos.length >= 2) {
+            this.angulos = angulos;
+        } else {
+            // Manejar un número insuficiente de ángulos
+            System.out.println("Se requieren al menos dos ángulos para graficar.");
+        }
+
+        // Añadir un WindowListener para manejar el cierre de la ventana
+        addWindowListener(new WindowAdapter() {
+            @Override
+            public void windowClosing(WindowEvent e) {
+                // Aquí puedes agregar lógica adicional antes de cerrar la ventana
+                System.out.println("Cerrando la ventana de Grafica.");
+            }
+        });
     }
 
     @Override
@@ -33,34 +50,25 @@ public class Grafica extends JFrame {
         g2.draw(new Line2D.Double(centerX, 0, centerX, getHeight())); // Eje Y
         g2.draw(new Line2D.Double(0, centerY, getWidth(), centerY)); // Eje X
 
-        for (int i = 0; i < numeroVectores; i++) {
-            // Obtén los ángulos según el número de vectores
-            double angulo = obtenerAnguloParaVector(i, numeroVectores);
-            double radianes = Math.toRadians(angulo);
-            int longitud = 100; // Longitud del vector
+        if (angulos != null) {
+            for (double angulo : angulos) {
+                double radianes = Math.toRadians(angulo);
+                int longitud = 100; // Longitud del vector
 
-            int xFinal = centerX + (int) (longitud * Math.cos(radianes));
-            int yFinal = centerY - (int) (longitud * Math.sin(radianes));
+                int xFinal = centerX + (int) (longitud * Math.cos(radianes));
+                int yFinal = centerY - (int) (longitud * Math.sin(radianes));
 
-            g2.setColor(Color.RED); // Color de los vectores
-            g2.draw(new Line2D.Double(centerX, centerY, xFinal, yFinal));
+                g2.setColor(Color.RED); // Color de los vectores
+                g2.draw(new Line2D.Double(centerX, centerY, xFinal, yFinal));
+            }
+        } else {
+            // Manejar el caso en el que no haya ángulos para graficar
+            System.out.println("No hay ángulos para graficar.");
         }
 
         // Etiquetas de ejes X e Y
         g2.setColor(Color.BLACK);
         g2.drawString("X", getWidth() - 15, centerY + 15);
         g2.drawString("Y", centerX - 20, 15);
-    }
-
-    private double obtenerAnguloParaVector(int vectorIndex, int totalVectores) {
-        // Calcula el ángulo en grados
-        double angulo = (360.0 * vectorIndex) / totalVectores;
-
-        // Asegúrate de que el ángulo esté en el rango [0, 360) grados
-        if (angulo >= 360.0) {
-            angulo -= 360.0;
-        }
-
-        return angulo;
     }
 }

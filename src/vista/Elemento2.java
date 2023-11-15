@@ -5,10 +5,13 @@ import javax.swing.JOptionPane;
 
 public class Elemento2 extends javax.swing.JPanel {
       
-
+    // Declarar una instancia de ObtenerVectores
+    private ObtenerVectores obtenerVectores;
+    
     public Elemento2() {
         initComponents();
-   
+        obtenerVectores = new ObtenerVectores();
+
     }
 
     @SuppressWarnings("unchecked")
@@ -362,6 +365,19 @@ public class Elemento2 extends javax.swing.JPanel {
 
     private void btn_calcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_calcularActionPerformed
     try{
+        
+         // Obtener los ángulos de los JTextField
+        double angulo1 = Double.parseDouble(txt_AnguloCosF1.getText());
+        double angulo2 = Double.parseDouble(txt_AnguloCosF2.getText());
+
+        // Crear un array con los ángulos
+        double[] angulos = { angulo1, angulo2 };
+
+        // Setear los ángulos en la instancia de ObtenerVectores
+        obtenerVectores.setAngulos(angulos);
+
+        // Llamar al método graficar
+        obtenerVectores.graficar();
         // Obten los valores de magnitudes y ángulos de F1 y F2
         double magnitudF1 = Double.parseDouble(txt_MagnitudCosF1.getText());
         double anguloF1 = Double.parseDouble(txt_AnguloCosF1.getText());
