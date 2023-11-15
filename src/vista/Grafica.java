@@ -1,87 +1,66 @@
 
 package vista;
 
+import javax.swing.*;
+import java.awt.*;
+import java.awt.geom.Line2D;
 
-public class Grafica extends javax.swing.JFrame {
+public class Grafica extends JFrame {
+    private int numeroVectores;
 
-   
     public Grafica() {
-        initComponents();
+        setTitle("Vectores en el plano cartesiano");
+        setSize(400, 400);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
     }
 
-   
-    @SuppressWarnings("unchecked")
-    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
-    private void initComponents() {
-
-        Panel_Grafica = new javax.swing.JPanel();
-
-        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-
-        Panel_Grafica.setBackground(new java.awt.Color(255, 255, 255));
-
-        javax.swing.GroupLayout Panel_GraficaLayout = new javax.swing.GroupLayout(Panel_Grafica);
-        Panel_Grafica.setLayout(Panel_GraficaLayout);
-        Panel_GraficaLayout.setHorizontalGroup(
-            Panel_GraficaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 700, Short.MAX_VALUE)
-        );
-        Panel_GraficaLayout.setVerticalGroup(
-            Panel_GraficaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 500, Short.MAX_VALUE)
-        );
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Panel_Grafica, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Panel_Grafica, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-
-        pack();
-    }// </editor-fold>//GEN-END:initComponents
-
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Grafica.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Grafica.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Grafica.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Grafica.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new Grafica().setVisible(true);
-            }
-        });
+    public void setNumeroVectores(int numeroVectores) {
+        this.numeroVectores = numeroVectores;
+        repaint(); // Vuelve a dibujar la gráfica con el nuevo número de vectores
     }
 
-    // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel Panel_Grafica;
-    // End of variables declaration//GEN-END:variables
+    @Override
+    public void paint(Graphics g) {
+        super.paint(g);
+        Graphics2D g2 = (Graphics2D) g;
+
+        int centerX = getWidth() / 2;
+        int centerY = getHeight() / 2;
+
+        // Dibuja ejes X e Y
+        g2.setColor(Color.BLACK);
+        g2.draw(new Line2D.Double(centerX, 0, centerX, getHeight())); // Eje Y
+        g2.draw(new Line2D.Double(0, centerY, getWidth(), centerY)); // Eje X
+
+        for (int i = 0; i < numeroVectores; i++) {
+            // Obtén los ángulos según el número de vectores
+            double angulo = obtenerAnguloParaVector(i, numeroVectores);
+            double radianes = Math.toRadians(angulo);
+            int longitud = 100; // Longitud del vector
+
+            int xFinal = centerX + (int) (longitud * Math.cos(radianes));
+            int yFinal = centerY - (int) (longitud * Math.sin(radianes));
+
+            g2.setColor(Color.RED); // Color de los vectores
+            g2.draw(new Line2D.Double(centerX, centerY, xFinal, yFinal));
+        }
+
+        // Etiquetas de ejes X e Y
+        g2.setColor(Color.BLACK);
+        g2.drawString("X", getWidth() - 15, centerY + 15);
+        g2.drawString("Y", centerX - 20, 15);
+    }
+
+    private double obtenerAnguloParaVector(int vectorIndex, int totalVectores) {
+        // Calcula el ángulo en grados
+        double angulo = (360.0 * vectorIndex) / totalVectores;
+
+        // Asegúrate de que el ángulo esté en el rango [0, 360) grados
+        if (angulo >= 360.0) {
+            angulo -= 360.0;
+        }
+
+        return angulo;
+    }
 }

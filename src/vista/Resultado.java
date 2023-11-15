@@ -4,10 +4,10 @@ package vista;
 import javax.swing.SwingUtilities;
 
 public class Resultado extends javax.swing.JFrame {
-
+    
     public Resultado() {
         initComponents();
-        
+   
          SwingUtilities.invokeLater(new Runnable() {
             @Override
             public void run() {
@@ -20,7 +20,7 @@ public class Resultado extends javax.swing.JFrame {
        setResizable(false);
 
     }
-  
+    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -146,9 +146,7 @@ public class Resultado extends javax.swing.JFrame {
 
     private void btn_GraficarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_GraficarActionPerformed
         // BOTON DE LA GRAFICA
-        Grafica view = new Grafica();
-        view.setVisible(true);
-        
+    
     }//GEN-LAST:event_btn_GraficarActionPerformed
 
    
@@ -195,4 +193,5 @@ public class Resultado extends javax.swing.JFrame {
     private javax.swing.JLabel label_Titulo;
     public javax.swing.JTextArea txtArea_Resultado;
     // End of variables declaration//GEN-END:variables
+
 }

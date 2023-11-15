@@ -221,28 +221,28 @@ public class Elemento2 extends javax.swing.JPanel {
                         .addComponent(label_grado1F2, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(Panel_Elemento2Layout.createSequentialGroup()
                         .addGap(6, 6, 6)
-                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(6, 6, 6)
-                        .addComponent(txt_MagnitudCosF2, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(12, 12, 12)
-                        .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(6, 6, 6)
-                        .addComponent(txt_AnguloCosF2, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(6, 6, 6)
-                        .addComponent(label_gradoF2, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(6, 6, 6)
-                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(12, 12, 12)
-                        .addComponent(txt_MagnitudSenF2, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(12, 12, 12)
-                        .addComponent(txt_AnguloSenF2, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(label_grado2F2, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(Panel_Elemento2Layout.createSequentialGroup()
-                        .addGap(6, 6, 6)
-                        .addComponent(btn_calcular)))
+                        .addGroup(Panel_Elemento2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(btn_calcular, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(Panel_Elemento2Layout.createSequentialGroup()
+                                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(6, 6, 6)
+                                .addComponent(txt_MagnitudCosF2, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(12, 12, 12)
+                                .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(6, 6, 6)
+                                .addComponent(txt_AnguloCosF2, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(6, 6, 6)
+                                .addComponent(label_gradoF2, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(6, 6, 6)
+                                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(12, 12, 12)
+                                .addComponent(txt_MagnitudSenF2, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(12, 12, 12)
+                                .addComponent(txt_AnguloSenF2, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(label_grado2F2, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addContainerGap(14, Short.MAX_VALUE))
         );
         Panel_Elemento2Layout.setVerticalGroup(
@@ -423,6 +423,10 @@ public class Elemento2 extends javax.swing.JPanel {
     // End of variables declaration//GEN-END:variables
 
     //IMPLEMENTACION DE METODOS
+
+
+    
+    
    private double calcularResultante(double magnitudF1, double anguloF1, double magnitudF2, double anguloF2) {
     // Realiza los cálculos para obtener la resultante
     double resultante = Math.sqrt(Math.pow(magnitudF1 * Math.cos(Math.toRadians(anguloF1)) + magnitudF2 * Math.cos(Math.toRadians(anguloF2)), 2)
@@ -445,14 +449,16 @@ public class Elemento2 extends javax.swing.JPanel {
     double componenteY_F1 = magnitudF1 * Math.sin(Math.toRadians(anguloF1));
     double componenteX_F2 = magnitudF2 * Math.cos(Math.toRadians(anguloF2));
     double componenteY_F2 = magnitudF2 * Math.sin(Math.toRadians(anguloF2));
+    
+    
     explicacion.append("Paso 2: Separamos las fuerzas en sus componentes X y Y.\n");
-    explicacion.append("  \n- Componente X de F1: ").append(componenteX_F1).append("\n");
-    explicacion.append("  - Componente X de F2: ").append(componenteX_F2).append("\n\n");
-    explicacion.append("  - Componente Y de F1: ").append(componenteY_F1).append("\n");
-    explicacion.append("  - Componente Y de F2: ").append(componenteY_F2).append("\n\n");
+        explicacion.append("  \n- F1 (Componente X): ").append(magnitudF1).append(" * cos\n");
+    explicacion.append("  - F2 (Componente X): ").append(magnitudF2).append(" * cos\n\n");
+    explicacion.append("  - F1 (Componente Y): ").append(magnitudF1).append(" * sin\n");
+    explicacion.append("  - F2 (Componente Y): ").append(magnitudF2).append(" * sin\n\n");
 
     // Paso 3: Multiplicamos las magnitudes y los ángulos por sus componentes X y Y
-    explicacion.append("Paso 3: Multiplicamos las magnitudes y los ángulos por sus componentes X (coseno) y Y (seno).\n");
+    explicacion.append("Paso 3: Multiplicamos las magnitudes y los angulos por sus componentes X (coseno) y Y (seno).\n");
     explicacion.append("  \n- F1 (Componente X): ").append(magnitudF1).append(" * cos(").append(anguloF1).append(") = ").append(componenteX_F1).append("\n");
     explicacion.append("  - F2 (Componente X): ").append(magnitudF2).append(" * cos(").append(anguloF2).append(") = ").append(componenteX_F2).append("\n\n");
     explicacion.append("  - F1 (Componente Y): ").append(magnitudF1).append(" * sin(").append(anguloF1).append(") = ").append(componenteY_F1).append("\n");
@@ -477,15 +483,12 @@ public class Elemento2 extends javax.swing.JPanel {
     // Paso 6: Calcular y mostrar el ángulo de la resultante
     explicacion.append("Paso 6: Calcular y mostrar el angulo de la resultante.\n");
 
-    // Calculamos el ángulo utilizando la función atan2
     double anguloRadianes = Math.atan2(componenteYTotal, componenteXTotal);
 
-    // La fórmula matemática para calcular el ángulo es la siguiente:
     explicacion.append("  \n- El angulo de la resultante se calcula utilizando la función de arco tangente: θ = atan(Ry / Rx)\n");
     explicacion.append("    Ry = ").append(componenteYTotal).append("\n");
     explicacion.append("    Rx = ").append(componenteXTotal).append("\n");
 
-    // Convertimos el ángulo de radianes a grados
     double anguloGrados = Math.toDegrees(anguloRadianes);
     explicacion.append("  \n-θ = atan(").append(componenteYTotal).append(" / ").append(componenteXTotal).append(") = ").append(anguloGrados).append(" grados.\n\n");
     explicacion.append("  -El ángulo de la resultante = ").append(anguloGrados).append(" grados.\n\n");

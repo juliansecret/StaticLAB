@@ -1,6 +1,8 @@
 
 package vista;
 
+import javax.swing.JOptionPane;
+
 public class Elemento5 extends javax.swing.JPanel {
 
     public Elemento5() {
@@ -368,116 +370,119 @@ public class Elemento5 extends javax.swing.JPanel {
         Panel_Elemento5Layout.setHorizontalGroup(
             Panel_Elemento5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(Panel_Elemento5Layout.createSequentialGroup()
-                .addGap(590, 590, 590)
-                .addComponent(btn_limpiar))
-            .addGroup(Panel_Elemento5Layout.createSequentialGroup()
-                .addGap(6, 6, 6)
-                .addComponent(label_F1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(6, 6, 6)
-                .addComponent(txt_MagnitudCosF1, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(6, 6, 6)
-                .addComponent(jLabel27, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(6, 6, 6)
-                .addComponent(txt_AnguloCosF1, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(6, 6, 6)
-                .addComponent(jLabel29, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(6, 6, 6)
-                .addComponent(jLabel32, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(txt_MagnitudSenF1, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jLabel36, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(12, 12, 12)
-                .addComponent(txt_AnguloSenF1, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(12, 12, 12)
-                .addComponent(jLabel34, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(Panel_Elemento5Layout.createSequentialGroup()
-                .addGap(6, 6, 6)
-                .addComponent(label_F2, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(6, 6, 6)
-                .addComponent(txt_MagnitudCosF2, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(6, 6, 6)
-                .addComponent(jLabel30, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(6, 6, 6)
-                .addComponent(txt_AnguloCosF2, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(6, 6, 6)
-                .addComponent(jLabel31, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(6, 6, 6)
-                .addComponent(jLabel28, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(txt_MagnitudSenF2, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jLabel33, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(12, 12, 12)
-                .addComponent(txt_AnguloSenF2, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(12, 12, 12)
-                .addComponent(jLabel35, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(Panel_Elemento5Layout.createSequentialGroup()
-                .addGap(6, 6, 6)
-                .addComponent(label_F3, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(6, 6, 6)
-                .addComponent(txt_MagnitudCosF3, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(6, 6, 6)
-                .addComponent(jLabel40, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(6, 6, 6)
-                .addComponent(txt_AnguloCosF3, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(6, 6, 6)
-                .addComponent(jLabel43, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(6, 6, 6)
-                .addComponent(jLabel46, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(txt_MagnitudSenF3, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jLabel49, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(12, 12, 12)
-                .addComponent(txt_AnguloSenF3, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(12, 12, 12)
-                .addComponent(jLabel52, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(Panel_Elemento5Layout.createSequentialGroup()
-                .addGap(6, 6, 6)
-                .addComponent(label_F4, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(6, 6, 6)
-                .addComponent(txt_MagnitudCosF4, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(6, 6, 6)
-                .addComponent(jLabel41, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(6, 6, 6)
-                .addComponent(txt_AnguloCosF4, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(6, 6, 6)
-                .addComponent(jLabel44, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(6, 6, 6)
-                .addComponent(jLabel47, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(txt_MagnitudSenF4, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jLabel50, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(12, 12, 12)
-                .addComponent(txt_AnguloSenF4, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(12, 12, 12)
-                .addComponent(jLabel53, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(Panel_Elemento5Layout.createSequentialGroup()
-                .addGap(6, 6, 6)
-                .addComponent(label_F5, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(6, 6, 6)
-                .addComponent(txt_MagnitudCosF5, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(6, 6, 6)
-                .addComponent(jLabel42, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(6, 6, 6)
-                .addComponent(txt_AnguloCosF5, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(6, 6, 6)
-                .addComponent(jLabel45, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(6, 6, 6)
-                .addComponent(jLabel48, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(txt_MagnitudSenF5, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jLabel51, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(12, 12, 12)
-                .addComponent(txt_AnguloSenF5, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(12, 12, 12)
-                .addComponent(jLabel54, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(Panel_Elemento5Layout.createSequentialGroup()
-                .addGap(6, 6, 6)
-                .addComponent(btn_calcular))
+                .addGroup(Panel_Elemento5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(Panel_Elemento5Layout.createSequentialGroup()
+                        .addGap(6, 6, 6)
+                        .addGroup(Panel_Elemento5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(Panel_Elemento5Layout.createSequentialGroup()
+                                .addComponent(label_F2, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(6, 6, 6)
+                                .addComponent(txt_MagnitudCosF2, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(6, 6, 6)
+                                .addComponent(jLabel30, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(6, 6, 6)
+                                .addComponent(txt_AnguloCosF2, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(6, 6, 6)
+                                .addComponent(jLabel31, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(6, 6, 6)
+                                .addComponent(jLabel28, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(txt_MagnitudSenF2, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(jLabel33, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(12, 12, 12)
+                                .addComponent(txt_AnguloSenF2, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(12, 12, 12)
+                                .addComponent(jLabel35, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(Panel_Elemento5Layout.createSequentialGroup()
+                                .addComponent(label_F3, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(6, 6, 6)
+                                .addComponent(txt_MagnitudCosF3, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(6, 6, 6)
+                                .addComponent(jLabel40, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(6, 6, 6)
+                                .addComponent(txt_AnguloCosF3, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(6, 6, 6)
+                                .addComponent(jLabel43, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(6, 6, 6)
+                                .addComponent(jLabel46, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(txt_MagnitudSenF3, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(jLabel49, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(12, 12, 12)
+                                .addComponent(txt_AnguloSenF3, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(12, 12, 12)
+                                .addComponent(jLabel52, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(Panel_Elemento5Layout.createSequentialGroup()
+                                .addComponent(label_F4, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(6, 6, 6)
+                                .addComponent(txt_MagnitudCosF4, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(6, 6, 6)
+                                .addComponent(jLabel41, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(6, 6, 6)
+                                .addComponent(txt_AnguloCosF4, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(6, 6, 6)
+                                .addComponent(jLabel44, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(6, 6, 6)
+                                .addComponent(jLabel47, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(txt_MagnitudSenF4, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(jLabel50, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(12, 12, 12)
+                                .addComponent(txt_AnguloSenF4, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(12, 12, 12)
+                                .addComponent(jLabel53, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(Panel_Elemento5Layout.createSequentialGroup()
+                                .addComponent(label_F5, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(6, 6, 6)
+                                .addComponent(txt_MagnitudCosF5, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(6, 6, 6)
+                                .addComponent(jLabel42, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(6, 6, 6)
+                                .addComponent(txt_AnguloCosF5, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(6, 6, 6)
+                                .addComponent(jLabel45, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(6, 6, 6)
+                                .addComponent(jLabel48, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(txt_MagnitudSenF5, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(jLabel51, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(12, 12, 12)
+                                .addComponent(txt_AnguloSenF5, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(12, 12, 12)
+                                .addComponent(jLabel54, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(Panel_Elemento5Layout.createSequentialGroup()
+                                .addComponent(label_F1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(6, 6, 6)
+                                .addGroup(Panel_Elemento5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(Panel_Elemento5Layout.createSequentialGroup()
+                                        .addGap(528, 528, 528)
+                                        .addComponent(btn_limpiar))
+                                    .addGroup(Panel_Elemento5Layout.createSequentialGroup()
+                                        .addComponent(txt_MagnitudCosF1, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(6, 6, 6)
+                                        .addComponent(jLabel27, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(6, 6, 6)
+                                        .addComponent(txt_AnguloCosF1, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(6, 6, 6)
+                                        .addComponent(jLabel29, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(6, 6, 6)
+                                        .addComponent(jLabel32, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(txt_MagnitudSenF1, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(jLabel36, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(12, 12, 12)
+                                        .addComponent(txt_AnguloSenF1, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(12, 12, 12)
+                                        .addComponent(jLabel34, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                    .addGroup(Panel_Elemento5Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(btn_calcular)))
+                .addGap(54, 54, 54))
         );
         Panel_Elemento5Layout.setVerticalGroup(
             Panel_Elemento5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -598,7 +603,8 @@ public class Elemento5 extends javax.swing.JPanel {
                         .addGap(1, 1, 1)
                         .addComponent(jLabel54)))
                 .addGap(18, 18, 18)
-                .addComponent(btn_calcular))
+                .addComponent(btn_calcular)
+                .addContainerGap(46, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -712,12 +718,53 @@ public class Elemento5 extends javax.swing.JPanel {
     }//GEN-LAST:event_txt_AnguloCosF5KeyReleased
 
     private void btn_calcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_calcularActionPerformed
-       
+            try {
+                // Obten los valores de las magnitudes y ángulos de las 5 fuerzas desde los campos de texto
+                double magnitudF1 = Double.parseDouble(txt_MagnitudCosF1.getText());
+                double anguloF1 = Double.parseDouble(txt_AnguloCosF1.getText());
 
+                double magnitudF2 = Double.parseDouble(txt_MagnitudCosF2.getText());
+                double anguloF2 = Double.parseDouble(txt_AnguloCosF2.getText());
+
+                double magnitudF3 = Double.parseDouble(txt_MagnitudCosF3.getText());
+                double anguloF3 = Double.parseDouble(txt_AnguloCosF3.getText());
+
+                double magnitudF4 = Double.parseDouble(txt_MagnitudCosF4.getText());
+                double anguloF4 = Double.parseDouble(txt_AnguloCosF4.getText());
+
+                double magnitudF5 = Double.parseDouble(txt_MagnitudCosF5.getText());
+                double anguloF5 = Double.parseDouble(txt_AnguloCosF5.getText());
+
+                // Calcula la resultante
+                double resultante = calcularResultante(magnitudF1, anguloF1, magnitudF2, anguloF2, magnitudF3, anguloF3, magnitudF4, anguloF4, magnitudF5, anguloF5);
+
+
+               double anguloResultante = calcularAnguloResultante(anguloF1, anguloF2, anguloF3, anguloF4, anguloF5,  magnitudF1, magnitudF2, magnitudF3, magnitudF4, magnitudF5);
+
+               String explicacion = generarExplicacion(magnitudF1, anguloF1, magnitudF2, anguloF2, magnitudF3, anguloF3, magnitudF4, anguloF4, magnitudF5, anguloF5);
+
+
+                // Muestra la explicación en el JFrame "Resultado"
+                Resultado resultadoFrame = new Resultado();
+                resultadoFrame.label_Encabezado.setText("Resultante = " + resultante + "                        Angulo = " + anguloResultante);
+                resultadoFrame.txtArea_Resultado.setText(explicacion);
+                resultadoFrame.setVisible(true);
+                
+            } catch (DatosIncompletosException e) {
+                JOptionPane.showMessageDialog(this, e.getMessage(), "Datos Incompletos", JOptionPane.WARNING_MESSAGE);
+            } catch (NumberFormatException e) {
+                JOptionPane.showMessageDialog(this, "Ingrese valores numéricos válidos.", "Error de Entrada", JOptionPane.ERROR_MESSAGE);
+            } catch (Exception e) {
+                JOptionPane.showMessageDialog(this, "Ocurrió un error inesperado.", "Error", JOptionPane.ERROR_MESSAGE);
+            }
     }//GEN-LAST:event_btn_calcularActionPerformed
 
     private void btn_limpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_limpiarActionPerformed
-        // TODO add your handling code here:
+        // BOTON PARA LIMPIAR CAMPOS
+        
+        
+        
+        
     }//GEN-LAST:event_btn_limpiarActionPerformed
 
 
@@ -776,4 +823,195 @@ public class Elemento5 extends javax.swing.JPanel {
     public javax.swing.JTextField txt_MagnitudSenF4;
     public javax.swing.JTextField txt_MagnitudSenF5;
     // End of variables declaration//GEN-END:variables
+
+    //Aqui es donde van los funciones
+    
+    public double[] obtenerAngulos() {
+        double[] angulos = new double[5]; // Arreglo para almacenar los ángulos
+
+        // Obtén los ángulos de las fuerzas desde los campos de texto
+        angulos[0] = Double.parseDouble(txt_AnguloCosF1.getText());
+        angulos[1] = Double.parseDouble(txt_AnguloCosF2.getText());
+        angulos[2] = Double.parseDouble(txt_AnguloCosF3.getText());
+        angulos[3] = Double.parseDouble(txt_AnguloCosF4.getText());
+        angulos[4] = Double.parseDouble(txt_AnguloCosF5.getText());
+
+        return angulos;
+    }
+    
+    // Metodo para calcular la resultante con 5 fuerzas
+    private double calcularResultante(
+        double magnitudF1, double anguloF1,
+        double magnitudF2, double anguloF2,
+        double magnitudF3, double anguloF3,
+        double magnitudF4, double anguloF4,
+        double magnitudF5, double anguloF5) {
+
+        // Realiza los cálculos para obtener la resultante
+        double resultante = Math.sqrt(
+            Math.pow(magnitudF1 * Math.cos(Math.toRadians(anguloF1)) + magnitudF2 * Math.cos(Math.toRadians(anguloF2))
+                + magnitudF3 * Math.cos(Math.toRadians(anguloF3)) + magnitudF4 * Math.cos(Math.toRadians(anguloF4))
+                + magnitudF5 * Math.cos(Math.toRadians(anguloF5)), 2)
+            + Math.pow(magnitudF1 * Math.sin(Math.toRadians(anguloF1)) + magnitudF2 * Math.sin(Math.toRadians(anguloF2))
+                + magnitudF3 * Math.sin(Math.toRadians(anguloF3)) + magnitudF4 * Math.sin(Math.toRadians(anguloF4))
+                + magnitudF5 * Math.sin(Math.toRadians(anguloF5)), 2)
+        );
+
+    return resultante;
+    }
+
+
+    // Metodo para calcular el ángulo de la resultante con 5 fuerzas
+    private double calcularAnguloResultante(
+        double anguloF1, double anguloF2, double anguloF3, double anguloF4, double anguloF5,
+        double magnitudF1, double magnitudF2, double magnitudF3, double magnitudF4, double magnitudF5) {
+
+        // Calcula las componentes X e Y de cada fuerza
+        double componenteX_F1 = magnitudF1 * Math.cos(Math.toRadians(anguloF1));
+        double componenteY_F1 = magnitudF1 * Math.sin(Math.toRadians(anguloF1));
+        double componenteX_F2 = magnitudF2 * Math.cos(Math.toRadians(anguloF2));
+        double componenteY_F2 = magnitudF2 * Math.sin(Math.toRadians(anguloF2));
+        double componenteX_F3 = magnitudF3 * Math.cos(Math.toRadians(anguloF3));
+        double componenteY_F3 = magnitudF3 * Math.sin(Math.toRadians(anguloF3));
+        double componenteX_F4 = magnitudF4 * Math.cos(Math.toRadians(anguloF4));
+        double componenteY_F4 = magnitudF4 * Math.sin(Math.toRadians(anguloF4));
+        double componenteX_F5 = magnitudF5 * Math.cos(Math.toRadians(anguloF5));
+        double componenteY_F5 = magnitudF5 * Math.sin(Math.toRadians(anguloF5));
+
+        // Suma las componentes X y Y
+        double componenteXTotal = componenteX_F1 + componenteX_F2 + componenteX_F3 + componenteX_F4 + componenteX_F5;
+        double componenteYTotal = componenteY_F1 + componenteY_F2 + componenteY_F3 + componenteY_F4 + componenteY_F5;
+
+        // Calcula el ángulo en radianes
+        double anguloRadianes = Math.atan2(componenteYTotal, componenteXTotal);
+
+        // Convierte el ángulo de radianes a grados
+        double anguloGrados = Math.toDegrees(anguloRadianes);
+
+        return anguloGrados;
+    }
+
+    
+    public class DatosIncompletosException extends RuntimeException {
+        public DatosIncompletosException(String message) {
+            super(message);
+        }
+    }
+
+    
+    private String generarExplicacion(
+        double magnitudF1, double anguloF1,
+        double magnitudF2, double anguloF2,
+        double magnitudF3, double anguloF3,
+        double magnitudF4, double anguloF4,
+        double magnitudF5, double anguloF5) {
+        StringBuilder explicacion = new StringBuilder("                                                                                             Procedimiento para calcular la resultante y el ángulo:\n\n");
+
+        // Paso 1: Obtener los valores de magnitudes y ángulos de las 5 fuerzas
+        explicacion.append("\nPaso 1: Obtener los valores de magnitudes y ángulos de las 5 fuerzas.\n");
+        explicacion.append("  - Magnitud de F1: ").append(magnitudF1).append("\n");
+        explicacion.append("  - Angulo de F1: ").append(anguloF1).append(" grados\n\n");
+        explicacion.append("  - Magnitud de F2: ").append(magnitudF2).append("\n");
+        explicacion.append("  - Angulo de F2: ").append(anguloF2).append(" grados\n\n");
+        explicacion.append("  - Magnitud de F3: ").append(magnitudF3).append("\n");
+        explicacion.append("  - Angulo de F3: ").append(anguloF3).append(" grados\n\n");
+        explicacion.append("  - Magnitud de F4: ").append(magnitudF4).append("\n");
+        explicacion.append("  - Angulo de F4: ").append(anguloF4).append(" grados\n\n");
+        explicacion.append("  - Magnitud de F5: ").append(magnitudF5).append("\n");
+        explicacion.append("  - Angulo de F5: ").append(anguloF5).append(" grados\n\n");
+
+        // Paso 2: Separamos las fuerzas en sus componentes X y Y
+
+        //  realizamos una conversion a radianes y miltipliacmos por magnitud
+        double componenteX_F1 = magnitudF1 * Math.cos(Math.toRadians(anguloF1));
+        double componenteY_F1 = magnitudF1 * Math.sin(Math.toRadians(anguloF1));
+        double componenteX_F2 = magnitudF2 * Math.cos(Math.toRadians(anguloF2));
+        double componenteY_F2 = magnitudF2 * Math.sin(Math.toRadians(anguloF2));
+        double componenteX_F3 = magnitudF3 * Math.cos(Math.toRadians(anguloF3));
+        double componenteY_F3 = magnitudF3 * Math.sin(Math.toRadians(anguloF3));
+        double componenteX_F4 = magnitudF4 * Math.cos(Math.toRadians(anguloF4));
+        double componenteY_F4 = magnitudF4 * Math.sin(Math.toRadians(anguloF4));
+        double componenteX_F5 = magnitudF5 * Math.cos(Math.toRadians(anguloF5));
+        double componenteY_F5 = magnitudF5 * Math.sin(Math.toRadians(anguloF5));
+
+        explicacion.append("\nPaso 2: Separamos las fuerzas en sus componentes X y Y.\n");
+        explicacion.append("  - F1 (Componente X): ").append(magnitudF1).append(" * cos\n");
+        explicacion.append("  - F2 (Componente X): ").append(magnitudF2).append(" * cos\n");
+        explicacion.append("  - F3 (Componente X): ").append(magnitudF3).append(" * cos\n");
+        explicacion.append("  - F4 (Componente X): ").append(magnitudF4).append(" * cos\n");
+        explicacion.append("  - F5 (Componente X): ").append(magnitudF5).append(" * cos\n\n");
+        explicacion.append("  - F1 (Componente Y): ").append(magnitudF1).append(" * sin\n");
+        explicacion.append("  - F2 (Componente Y): ").append(magnitudF2).append(" * sin\n");
+        explicacion.append("  - F3 (Componente Y): ").append(magnitudF3).append(" * sin\n ");
+        explicacion.append("  - F4 (Componente Y): ").append(magnitudF4).append(" * sin\n");
+        explicacion.append("  - F5 (Componente Y): ").append(magnitudF5).append(" * sin\n");
+
+        // Paso 3: Multiplicamos las magnitudes y los ángulos por sus componentes X y Y
+        explicacion.append("\nPaso 3: Multiplicamos las magnitudes y los ángulos por sus componentes X (coseno) y Y (seno).\n");
+        explicacion.append("  - F1 (Componente X): ").append(magnitudF1).append(" * cos(").append(anguloF1).append(") = ")
+                .append(componenteX_F1).append("\n");
+        explicacion.append("  - F2 (Componente X): ").append(magnitudF2).append(" * cos(").append(anguloF2).append(") = ")
+                .append(componenteX_F2).append("\n");
+        explicacion.append("  - F3 (Componente X): ").append(magnitudF3).append(" * cos(").append(anguloF3).append(") = ")
+                .append(componenteX_F3).append("\n");
+        explicacion.append("  - F4 (Componente X): ").append(magnitudF4).append(" * cos(").append(anguloF4).append(") = ")
+                .append(componenteX_F4).append("\n");
+        explicacion.append("  - F5 (Componente X): ").append(magnitudF5).append(" * cos(").append(anguloF5).append(") = ")
+                .append(componenteX_F5).append("\n\n");
+        explicacion.append("  - F1 (Componente Y): ").append(magnitudF1).append(" * sin(").append(anguloF1).append(") = ")
+                .append(componenteY_F1).append("\n");
+        explicacion.append("  - F2 (Componente Y): ").append(magnitudF2).append(" * sin(").append(anguloF2).append(") = ")
+                .append(componenteY_F2).append("\n");
+        explicacion.append("  - F3 (Componente Y): ").append(magnitudF3).append(" * sin(").append(anguloF3).append(") = ")
+                .append(componenteY_F3).append("\n");
+        explicacion.append("  - F4 (Componente Y): ").append(magnitudF4).append(" * sin(").append(anguloF4).append(") = ")
+                .append(componenteY_F4).append("\n");
+        explicacion.append("  - F5 (Componente Y): ").append(magnitudF5).append(" * sin(").append(anguloF5).append(") = ")
+                .append(componenteY_F5).append("\n\n");
+
+        // Paso 4: Se suman los componentes X y los componentes Y
+        double componenteXTotal = componenteX_F1 + componenteX_F2 + componenteX_F3 + componenteX_F4 + componenteX_F5;
+        double componenteYTotal = componenteY_F1 + componenteY_F2 + componenteY_F3 + componenteY_F4 + componenteY_F5;
+
+        explicacion.append("Paso 4: Se suman los componentes X y los componentes Y.\n");
+        explicacion.append("  - Total Componente X:  (").append(componenteX_F1).append(" + ").append(componenteX_F2).append(" + ")
+                .append(componenteX_F3).append(" + ").append(componenteX_F4).append(" + ").append(componenteX_F5).append(" ) = ")
+                .append(componenteXTotal).append("\n\n");
+        explicacion.append("  - Total Componente Y: (").append(componenteY_F1).append(" + ").append(componenteY_F2).append(" + ")
+                .append(componenteY_F3).append(" + ").append(componenteY_F4).append(" + ").append(componenteY_F5).append(") = ")
+                .append(componenteYTotal).append("\n\n");
+
+        // Paso 5: Se implementa el teorema de Pitágoras usando los valores de la suma de los componentes X y Y
+        double resultado = Math.sqrt(Math.pow(componenteXTotal, 2) + Math.pow(componenteYTotal, 2));
+
+        explicacion.append("Paso 5: Aplicación del teorema de Pitágoras usando los valores de la suma de los componentes X y Y.\n");
+        explicacion.append("  - Componente X al cuadrado: ").append(Double.toString(Math.pow(componenteXTotal, 2))).append("\n");
+        explicacion.append("  - Componente Y al cuadrado: ").append(Double.toString(Math.pow(componenteYTotal, 2))).append("\n");
+        explicacion.append("  - Suma de los cuadrados: ").append(Double.toString(Math.pow(componenteXTotal, 2) + Math.pow(componenteYTotal, 2))).append("\n");
+
+        explicacion.append("  - Aplicamos raíz cuadrada: ").append(Double.toString(resultado)).append("\n\n");
+
+        // Paso 6: Calcular y mostrar el ángulo de la resultante
+        explicacion.append("Paso 6: Calcular y mostrar el ángulo de la resultante.\n");
+
+        // Calculamos el ángulo utilizando la función atan2
+        double anguloRadianes = Math.atan2(componenteYTotal, componenteXTotal);
+
+        // La fórmula matemática para calcular el ángulo es la siguiente:
+        explicacion.append("  - El ángulo de la resultante se calcula utilizando la función de arco tangente: θ = atan(Ry / Rx)\n");
+        explicacion.append("  Ry = ").append(componenteYTotal).append("\n");
+        explicacion.append("  Rx = ").append(componenteXTotal).append("\n\n");
+
+        // Convertimos el ángulo de radianes a grados
+        double anguloGrados = Math.toDegrees(anguloRadianes);
+        explicacion.append("  - θ = atan(").append(componenteYTotal).append(" / ").append(componenteXTotal).append(") = ").append(anguloGrados).append(" grados.\n\n");
+        explicacion.append("  - El ángulo de la resultante = ").append(anguloGrados).append(" grados.\n\n");
+        explicacion.append("  Resultado final: ").append(resultado).append("\n");
+
+        return explicacion.toString();
+    }
+
+    
+    
+
 }

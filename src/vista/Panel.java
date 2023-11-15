@@ -1,11 +1,8 @@
 
 package vista;
-
-
 import java.awt.BorderLayout;
 
 public class Panel extends javax.swing.JFrame {
-
 
     public Panel() {
     
@@ -90,7 +87,7 @@ public class Panel extends javax.swing.JFrame {
         );
         Panel_ContenidoLayout.setVerticalGroup(
             Panel_ContenidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 320, Short.MAX_VALUE)
+            .addGap(0, 350, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout Panel_PrincipalLayout = new javax.swing.GroupLayout(Panel_Principal);
@@ -121,7 +118,7 @@ public class Panel extends javax.swing.JFrame {
                     .addComponent(btn_generar))
                 .addGap(18, 18, 18)
                 .addComponent(Panel_Contenido, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 27, Short.MAX_VALUE))
+                .addGap(0, 17, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -158,6 +155,7 @@ public class Panel extends javax.swing.JFrame {
             break;
         case 5:
             fuerza5();
+            
 
             break;
         default:
@@ -250,6 +248,7 @@ public void fuerza5(){
             Panel_Contenido.revalidate();
             Panel_Contenido.repaint();
     }
+
 
 }
 
