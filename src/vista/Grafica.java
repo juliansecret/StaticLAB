@@ -17,7 +17,7 @@ public class Grafica extends JFrame {
         // Establecer el comportamiento de cierre sin cerrar la aplicación
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 
-        setLocation(null);
+        setLocationRelativeTo(null);
 
         // Asegurarse de que haya al menos dos ángulos para graficar
         if (angulos.length >= 2) {

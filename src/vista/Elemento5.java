@@ -719,6 +719,22 @@ public class Elemento5 extends javax.swing.JPanel {
 
     private void btn_calcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_calcularActionPerformed
             try {
+                
+                // PASAR DATOS PARA GRAFICACION
+               double angulo1 = Double.parseDouble(txt_AnguloCosF1.getText());
+               double angulo2 = Double.parseDouble(txt_AnguloCosF2.getText());
+               double angulo3 = Double.parseDouble(txt_AnguloCosF3.getText());
+               double angulo4 = Double.parseDouble(txt_AnguloCosF4.getText());
+               double angulo5 = Double.parseDouble(txt_AnguloCosF5.getText());
+
+               double[] angulos = { angulo1, angulo2,angulo3,angulo4,angulo5 };
+
+               // Obtener una instancia de Resultado
+               Resultado resultadoFrame = new Resultado();
+               resultadoFrame.recibirAngulos(angulos);
+               resultadoFrame.setVisible(true); // Mostrar el marco Resultado 
+ 
+                
                 // Obten los valores de las magnitudes y ángulos de las 5 fuerzas desde los campos de texto
                 double magnitudF1 = Double.parseDouble(txt_MagnitudCosF1.getText());
                 double anguloF1 = Double.parseDouble(txt_AnguloCosF1.getText());
@@ -745,7 +761,6 @@ public class Elemento5 extends javax.swing.JPanel {
 
 
                 // Muestra la explicación en el JFrame "Resultado"
-                Resultado resultadoFrame = new Resultado();
                 resultadoFrame.label_Encabezado.setText("Resultante = " + resultante + "                        Angulo = " + anguloResultante);
                 resultadoFrame.txtArea_Resultado.setText(explicacion);
                 resultadoFrame.setVisible(true);

@@ -4,10 +4,12 @@ package vista;
 import javax.swing.SwingUtilities;
 
 public class Resultado extends javax.swing.JFrame {
-    
+          private ObtenerVectores obtenerVectores;
+
     public Resultado() {
         initComponents();
-   
+      obtenerVectores = new ObtenerVectores();
+
          SwingUtilities.invokeLater(new Runnable() {
             @Override
             public void run() {
@@ -19,6 +21,11 @@ public class Resultado extends javax.swing.JFrame {
 
        setResizable(false);
 
+    }
+    
+    
+     public void recibirAngulos(double[] angulos) {
+        obtenerVectores.setAngulos(angulos);
     }
     
     @SuppressWarnings("unchecked")
@@ -146,7 +153,7 @@ public class Resultado extends javax.swing.JFrame {
 
     private void btn_GraficarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_GraficarActionPerformed
         // BOTON DE LA GRAFICA
-    
+       obtenerVectores.graficar();
     }//GEN-LAST:event_btn_GraficarActionPerformed
 
    

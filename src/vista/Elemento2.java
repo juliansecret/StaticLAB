@@ -5,7 +5,6 @@ import javax.swing.JOptionPane;
 
 public class Elemento2 extends javax.swing.JPanel {
       
-    // Declarar una instancia de ObtenerVectores
     private ObtenerVectores obtenerVectores;
     
     public Elemento2() {
@@ -366,46 +365,42 @@ public class Elemento2 extends javax.swing.JPanel {
     private void btn_calcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_calcularActionPerformed
     try{
         
-         // Obtener los ángulos de los JTextField
-        double angulo1 = Double.parseDouble(txt_AnguloCosF1.getText());
-        double angulo2 = Double.parseDouble(txt_AnguloCosF2.getText());
+          // PASAR DATOS PARA GRAFICACION
+             double angulo1 = Double.parseDouble(txt_AnguloCosF1.getText());
+            double angulo2 = Double.parseDouble(txt_AnguloCosF2.getText());
+            double[] angulos = { angulo1, angulo2 };
 
-        // Crear un array con los ángulos
-        double[] angulos = { angulo1, angulo2 };
+            // Obtener una instancia de Resultado
+            Resultado resultadoFrame = new Resultado();
+            resultadoFrame.recibirAngulos(angulos);
+            resultadoFrame.setVisible(true); // Mostrar el marco Resultado 
 
-        // Setear los ángulos en la instancia de ObtenerVectores
-        obtenerVectores.setAngulos(angulos);
+            // Obten los valores de magnitudes y ángulos de F1 y F2
+            double magnitudF1 = Double.parseDouble(txt_MagnitudCosF1.getText());
+            double anguloF1 = Double.parseDouble(txt_AnguloCosF1.getText());
+            double magnitudF2 = Double.parseDouble(txt_MagnitudCosF2.getText());
+            double anguloF2 = Double.parseDouble(txt_AnguloCosF2.getText());
+            // Calcula la resultante y el ángulo
+            double resultante = calcularResultante(magnitudF1, anguloF1, magnitudF2, anguloF2);
+            double anguloResultante = calcularAnguloResultante(anguloF1, anguloF2, magnitudF1, magnitudF2);
 
-        // Llamar al método graficar
-        obtenerVectores.graficar();
-        // Obten los valores de magnitudes y ángulos de F1 y F2
-        double magnitudF1 = Double.parseDouble(txt_MagnitudCosF1.getText());
-        double anguloF1 = Double.parseDouble(txt_AnguloCosF1.getText());
-        double magnitudF2 = Double.parseDouble(txt_MagnitudCosF2.getText());
-        double anguloF2 = Double.parseDouble(txt_AnguloCosF2.getText());
+            // Genera la explicación detallada
+            String explicacion = generarExplicacion(magnitudF1, anguloF1, magnitudF2, anguloF2);
 
-
-    
-        // Calcula la resultante y el ángulo
-        double resultante = calcularResultante(magnitudF1, anguloF1, magnitudF2, anguloF2);
-        double anguloResultante = calcularAnguloResultante(anguloF1, anguloF2, magnitudF1, magnitudF2);
-
-        // Configura el texto del label_Encabezado
-        // Genera la explicación detallada
-        String explicacion = generarExplicacion(magnitudF1, anguloF1, magnitudF2, anguloF2);
-
-        // Muestra la explicación en la clase Resultado
-        Resultado resultadoFrame = new Resultado();
-        resultadoFrame.label_Encabezado.setText("Resultante = " + resultante + "                        Angulo = " + anguloResultante);
-        resultadoFrame.txtArea_Resultado.setText(explicacion);
-        resultadoFrame.setVisible(true);
-    } catch (DatosIncompletosException e) {
-        JOptionPane.showMessageDialog(this, e.getMessage(), "Datos Incompletos", JOptionPane.WARNING_MESSAGE);
-    } catch (NumberFormatException e) {
-        JOptionPane.showMessageDialog(this, "Ingrese valores numericos válidos.", "Error de Entrada", JOptionPane.ERROR_MESSAGE);
-    } catch (Exception e) {
-        JOptionPane.showMessageDialog(this, "Ocurrio un error inesperado.", "Error", JOptionPane.ERROR_MESSAGE);
-    }
+            //GENERAR PANEL RESULTADO
+            resultadoFrame.label_Encabezado.setText("Resultante = " + resultante + "                        Angulo = " + anguloResultante);
+            resultadoFrame.txtArea_Resultado.setText(explicacion);
+            resultadoFrame.setVisible(true);
+            
+     
+            
+        } catch (DatosIncompletosException e) {
+            JOptionPane.showMessageDialog(this, e.getMessage(), "Datos Incompletos", JOptionPane.WARNING_MESSAGE);
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(this, "Ingrese valores numericos válidos.", "Error de Entrada", JOptionPane.ERROR_MESSAGE);
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Ocurrio un error inesperado.", "Error", JOptionPane.ERROR_MESSAGE);
+        }
     
 
 
@@ -439,10 +434,6 @@ public class Elemento2 extends javax.swing.JPanel {
     // End of variables declaration//GEN-END:variables
 
     //IMPLEMENTACION DE METODOS
-
-
-    
-    
    private double calcularResultante(double magnitudF1, double anguloF1, double magnitudF2, double anguloF2) {
     // Realiza los cálculos para obtener la resultante
     double resultante = Math.sqrt(Math.pow(magnitudF1 * Math.cos(Math.toRadians(anguloF1)) + magnitudF2 * Math.cos(Math.toRadians(anguloF2)), 2)

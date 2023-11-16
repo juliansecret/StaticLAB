@@ -6,9 +6,11 @@ import javax.swing.JOptionPane;
 
 public class Elemento3 extends javax.swing.JPanel {
 
+    ObtenerVectores obtenerVectores;
 
     public Elemento3() {
         initComponents();
+        obtenerVectores = new ObtenerVectores();
     }
 
    
@@ -346,6 +348,19 @@ public class Elemento3 extends javax.swing.JPanel {
         //BOTON PARA CALULCAR
         
          try {
+             
+             // PASAR DATOS PARA GRAFICACION
+               double angulo1 = Double.parseDouble(txt_AnguloCosF1.getText());
+               double angulo2 = Double.parseDouble(txt_AnguloCosF2.getText());
+               double angulo3 = Double.parseDouble(txt_AnguloCosF3.getText());
+
+               double[] angulos = { angulo1, angulo2,angulo3 };
+
+               // Obtener una instancia de Resultado
+               Resultado resultadoFrame = new Resultado();
+               resultadoFrame.recibirAngulos(angulos);
+               resultadoFrame.setVisible(true); // Mostrar el marco Resultado 
+ 
                 // Obten los valores de las magnitudes y ángulos de las 5 fuerzas desde los campos de texto
                 double magnitudF1 = Double.parseDouble(txt_MagnitudCosF1.getText());
                 double anguloF1 = Double.parseDouble(txt_AnguloCosF1.getText());
@@ -367,11 +382,11 @@ public class Elemento3 extends javax.swing.JPanel {
 
 
                 // Muestra la explicación en el JFrame "Resultado"
-                Resultado resultadoFrame = new Resultado();
                 resultadoFrame.label_Encabezado.setText("Resultante = " + resultante + "                        Angulo = " + anguloResultante);
                 resultadoFrame.txtArea_Resultado.setText(explicacion);
                 resultadoFrame.setVisible(true);
                 
+              
             } catch (DatosIncompletosException e) {
                 JOptionPane.showMessageDialog(this, e.getMessage(), "Datos Incompletos", JOptionPane.WARNING_MESSAGE);
             } catch (NumberFormatException e) {
