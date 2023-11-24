@@ -340,6 +340,11 @@ public class Elemento4 extends javax.swing.JPanel {
 
         btn_limpiar.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btn_limpiar.setText("Limpiar");
+        btn_limpiar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_limpiarActionPerformed(evt);
+            }
+        });
         Panel_Elemento4.add(btn_limpiar, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 20, -1, -1));
 
         add(Panel_Elemento4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 730, 350));
@@ -469,6 +474,29 @@ public class Elemento4 extends javax.swing.JPanel {
         txt_AnguloSenF4.setText(anguloCos);
     }//GEN-LAST:event_txt_AnguloCosF4KeyReleased
 
+    private void btn_limpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_limpiarActionPerformed
+        /// BOTON PARA LIMPIAR CAMPOS
+         txt_AnguloCosF1.setText("");
+        txt_AnguloCosF2.setText("");
+        txt_AnguloCosF3.setText("");
+        txt_AnguloCosF4.setText("");
+        
+        txt_AnguloSenF1.setText("");
+        txt_AnguloSenF2.setText("");
+        txt_AnguloSenF3.setText("");
+        txt_AnguloSenF4.setText("");
+        
+        txt_MagnitudCosF1.setText("");
+        txt_MagnitudCosF2.setText("");
+        txt_MagnitudCosF3.setText("");
+        txt_MagnitudCosF4.setText("");
+        
+        txt_MagnitudSenF1.setText("");
+        txt_MagnitudSenF2.setText("");
+        txt_MagnitudSenF3.setText("");
+        txt_MagnitudSenF4.setText("");
+    }//GEN-LAST:event_btn_limpiarActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel Panel_Elemento4;
@@ -519,7 +547,7 @@ public class Elemento4 extends javax.swing.JPanel {
 
     
     public double[] obtenerAngulos() {
-        double[] angulos = new double[4]; // Arreglo para almacenar los ángulos
+        double[] angulos = new double[4]; 
 
         // Obtén los ángulos de las fuerzas desde los campos de texto
         angulos[0] = Double.parseDouble(txt_AnguloCosF1.getText());
@@ -530,26 +558,29 @@ public class Elemento4 extends javax.swing.JPanel {
         return angulos;
     }
 
-    // Metodo para calcular la resultante con 5 fuerzas
+    // Metodo para calcular la resultante 
     private double calcularResultante(
         double magnitudF1, double anguloF1,
         double magnitudF2, double anguloF2,
         double magnitudF3, double anguloF3,
         double magnitudF4, double anguloF4) {
 
-        // Realiza los cálculos para obtener la resultante
-        double resultante = Math.sqrt(
+        // Realiza los calculos para obtener la resultante
+        double resultado = Math.sqrt(
             Math.pow(magnitudF1 * Math.cos(Math.toRadians(anguloF1)) + magnitudF2 * Math.cos(Math.toRadians(anguloF2))
                 + magnitudF3 * Math.cos(Math.toRadians(anguloF3)) + magnitudF4 * Math.cos(Math.toRadians(anguloF4)), 2)
             + Math.pow(magnitudF1 * Math.sin(Math.toRadians(anguloF1)) + magnitudF2 * Math.sin(Math.toRadians(anguloF2))
                 + magnitudF3 * Math.sin(Math.toRadians(anguloF3)) + magnitudF4 * Math.sin(Math.toRadians(anguloF4)), 2)
         );
 
+    String redondeo = String.format("%.2f", resultado);
+        double resultante = Double.parseDouble(redondeo);
+        
     return resultante;
     }
 
 
-    // Metodo para calcular el ángulo de la resultante con 5 fuerzas
+    // Metodo para calcular el angulo de la resultante con 5 fuerzas
     private double calcularAnguloResultante(
         double anguloF1, double anguloF2, double anguloF3, double anguloF4,
         double magnitudF1, double magnitudF2, double magnitudF3, double magnitudF4) {
@@ -568,13 +599,16 @@ public class Elemento4 extends javax.swing.JPanel {
         double componenteXTotal = componenteX_F1 + componenteX_F2 + componenteX_F3 + componenteX_F4 ;
         double componenteYTotal = componenteY_F1 + componenteY_F2 + componenteY_F3 + componenteY_F4 ;
 
-        // Calcula el ángulo en radianes
+        // Calcula el angulo en radianes
         double anguloRadianes = Math.atan2(componenteYTotal, componenteXTotal);
 
-        // Convierte el ángulo de radianes a grados
+        // Convierte el angulo de radianes a grados
         double anguloGrados = Math.toDegrees(anguloRadianes);
 
-        return anguloGrados;
+        String redondeo = String.format("%.2f", anguloGrados);
+        double angulo = Double.parseDouble(redondeo);
+
+        return angulo;
     }
 
     
@@ -592,7 +626,7 @@ public class Elemento4 extends javax.swing.JPanel {
         double magnitudF4, double anguloF4) {
         StringBuilder explicacion = new StringBuilder("                                                                                             Procedimiento para calcular la resultante y el ángulo:\n\n");
 
-        // Paso 1: Obtener los valores de magnitudes y ángulos de las 5 fuerzas
+        // Paso 1: Obtener los valores de magnitudes y angulos de las fuerzas
         explicacion.append("\nPaso 1: Obtener los valores de magnitudes y ángulos de las 5 fuerzas.\n");
         explicacion.append("  - Magnitud de F1: ").append(magnitudF1).append("\n");
         explicacion.append("  - Angulo de F1: ").append(anguloF1).append(" grados\n\n");
@@ -626,7 +660,7 @@ public class Elemento4 extends javax.swing.JPanel {
         explicacion.append("  - F3 (Componente Y): ").append(magnitudF3).append(" * sin\n ");
         explicacion.append("  - F4 (Componente Y): ").append(magnitudF4).append(" * sin\n");
 
-        // Paso 3: Multiplicamos las magnitudes y los ángulos por sus componentes X y Y
+        // Paso 3: Multiplicamos las magnitudes y los angulos por sus componentes X y Y
         explicacion.append("\nPaso 3: Multiplicamos las magnitudes y los ángulos por sus componentes X (coseno) y Y (seno).\n");
         explicacion.append("  - F1 (Componente X): ").append(magnitudF1).append(" * cos(").append(anguloF1).append(") = ")
                 .append(componenteX_F1).append("\n");
@@ -670,15 +704,15 @@ public class Elemento4 extends javax.swing.JPanel {
         // Paso 6: Calcular y mostrar el angulo de la resultante
         explicacion.append("\nPaso 6: Calcular y mostrar el ángulo de la resultante.\n");
 
-        // Calculamos el ángulo utilizando la función atan2
+        // Calculamos el angulo utilizando la función atan2
         double anguloRadianes = Math.atan2(componenteYTotal, componenteXTotal);
 
-        // La fórmula matemática para calcular el ángulo es la siguiente:
+        // La formula matematica para calcular el angulo es la siguiente:
         explicacion.append("  - El angulo de la resultante se calcula utilizando la función de arco tangente: θ = atan(Ry / Rx)\n");
         explicacion.append("  Ry = ").append(componenteYTotal).append("\n");
         explicacion.append("  Rx = ").append(componenteXTotal).append("\n\n");
 
-        // Convertimos el ángulo de radianes a grados
+        // Convertimos el angulo de radianes a grados
         double anguloGrados = Math.toDegrees(anguloRadianes);
         explicacion.append("  - θ = atan(").append(componenteYTotal).append(" / ").append(componenteXTotal).append(") = ").append(anguloGrados).append(" grados.\n\n");
         explicacion.append("  - El angulo de la resultante = ").append(anguloGrados).append(" grados.\n\n");

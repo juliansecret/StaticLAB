@@ -776,8 +776,29 @@ public class Elemento5 extends javax.swing.JPanel {
 
     private void btn_limpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_limpiarActionPerformed
         // BOTON PARA LIMPIAR CAMPOS
+         txt_AnguloCosF1.setText("");
+        txt_AnguloCosF2.setText("");
+        txt_AnguloCosF3.setText("");
+        txt_AnguloCosF4.setText("");
+        txt_AnguloCosF5.setText("");
         
+        txt_AnguloSenF1.setText("");
+        txt_AnguloSenF2.setText("");
+        txt_AnguloSenF3.setText("");
+        txt_AnguloSenF4.setText("");
+        txt_AnguloSenF5.setText("");
         
+        txt_MagnitudCosF1.setText("");
+        txt_MagnitudCosF2.setText("");
+        txt_MagnitudCosF3.setText("");
+        txt_MagnitudCosF4.setText("");
+        txt_MagnitudCosF5.setText("");
+        
+        txt_MagnitudSenF1.setText("");
+        txt_MagnitudSenF2.setText("");
+        txt_MagnitudSenF3.setText("");
+        txt_MagnitudSenF4.setText("");
+        txt_MagnitudSenF5.setText("");
         
         
     }//GEN-LAST:event_btn_limpiarActionPerformed
@@ -863,7 +884,7 @@ public class Elemento5 extends javax.swing.JPanel {
         double magnitudF5, double anguloF5) {
 
         // Realiza los cálculos para obtener la resultante
-        double resultante = Math.sqrt(
+        double resultado = Math.sqrt(
             Math.pow(magnitudF1 * Math.cos(Math.toRadians(anguloF1)) + magnitudF2 * Math.cos(Math.toRadians(anguloF2))
                 + magnitudF3 * Math.cos(Math.toRadians(anguloF3)) + magnitudF4 * Math.cos(Math.toRadians(anguloF4))
                 + magnitudF5 * Math.cos(Math.toRadians(anguloF5)), 2)
@@ -872,11 +893,14 @@ public class Elemento5 extends javax.swing.JPanel {
                 + magnitudF5 * Math.sin(Math.toRadians(anguloF5)), 2)
         );
 
+    String redondeo = String.format("%.2f", resultado);
+        double resultante = Double.parseDouble(redondeo);
+        
     return resultante;
     }
 
 
-    // Metodo para calcular el ángulo de la resultante con 5 fuerzas
+    // Metodo para calcular el angulo de la resultante con 5 fuerzas
     private double calcularAnguloResultante(
         double anguloF1, double anguloF2, double anguloF3, double anguloF4, double anguloF5,
         double magnitudF1, double magnitudF2, double magnitudF3, double magnitudF4, double magnitudF5) {
@@ -897,13 +921,16 @@ public class Elemento5 extends javax.swing.JPanel {
         double componenteXTotal = componenteX_F1 + componenteX_F2 + componenteX_F3 + componenteX_F4 + componenteX_F5;
         double componenteYTotal = componenteY_F1 + componenteY_F2 + componenteY_F3 + componenteY_F4 + componenteY_F5;
 
-        // Calcula el ángulo en radianes
+        // Calcula el angulo en radianes
         double anguloRadianes = Math.atan2(componenteYTotal, componenteXTotal);
 
         // Convierte el ángulo de radianes a grados
         double anguloGrados = Math.toDegrees(anguloRadianes);
 
-        return anguloGrados;
+           String redondeo = String.format("%.2f", anguloGrados);
+        double angulo = Double.parseDouble(redondeo);
+
+        return angulo;
     }
 
     
@@ -996,7 +1023,7 @@ public class Elemento5 extends javax.swing.JPanel {
                 .append(componenteY_F3).append(" + ").append(componenteY_F4).append(" + ").append(componenteY_F5).append(") = ")
                 .append(componenteYTotal).append("\n\n");
 
-        // Paso 5: Se implementa el teorema de Pitágoras usando los valores de la suma de los componentes X y Y
+        // Paso 5: Se implementa el teorema de Pitagoras 
         double resultado = Math.sqrt(Math.pow(componenteXTotal, 2) + Math.pow(componenteYTotal, 2));
 
         explicacion.append("Paso 5: Aplicación del teorema de Pitágoras usando los valores de la suma de los componentes X y Y.\n");
@@ -1006,18 +1033,18 @@ public class Elemento5 extends javax.swing.JPanel {
 
         explicacion.append("  - Aplicamos raíz cuadrada: ").append(Double.toString(resultado)).append("\n\n");
 
-        // Paso 6: Calcular y mostrar el ángulo de la resultante
+        // Paso 6: Calcular y mostrar el angulo de la resultante
         explicacion.append("Paso 6: Calcular y mostrar el ángulo de la resultante.\n");
 
-        // Calculamos el ángulo utilizando la función atan2
+        // Calculamos el angulo utilizando la función atan2
         double anguloRadianes = Math.atan2(componenteYTotal, componenteXTotal);
 
-        // La fórmula matemática para calcular el ángulo es la siguiente:
+        // La formula matematica para calcular el angulo es la siguiente:
         explicacion.append("  - El ángulo de la resultante se calcula utilizando la función de arco tangente: θ = atan(Ry / Rx)\n");
         explicacion.append("  Ry = ").append(componenteYTotal).append("\n");
         explicacion.append("  Rx = ").append(componenteXTotal).append("\n\n");
 
-        // Convertimos el ángulo de radianes a grados
+        // Convertimos el angulo de radianes a grados
         double anguloGrados = Math.toDegrees(anguloRadianes);
         explicacion.append("  - θ = atan(").append(componenteYTotal).append(" / ").append(componenteXTotal).append(") = ").append(anguloGrados).append(" grados.\n\n");
         explicacion.append("  - El ángulo de la resultante = ").append(anguloGrados).append(" grados.\n\n");

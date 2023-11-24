@@ -182,6 +182,11 @@ public class Elemento2 extends javax.swing.JPanel {
 
         btn_limpiar.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btn_limpiar.setText("Limpiar");
+        btn_limpiar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_limpiarActionPerformed(evt);
+            }
+        });
 
         btn_calcular.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btn_calcular.setText("Calcular");
@@ -406,6 +411,19 @@ public class Elemento2 extends javax.swing.JPanel {
 
     }//GEN-LAST:event_btn_calcularActionPerformed
 
+    private void btn_limpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_limpiarActionPerformed
+        // BOTON LIMPIAR
+        txt_AnguloCosF1.setText("");
+        txt_AnguloCosF2.setText("");
+        txt_AnguloSenF1.setText("");
+        txt_AnguloSenF2.setText("");
+        txt_MagnitudCosF1.setText("");
+        txt_MagnitudCosF2.setText("");
+        txt_MagnitudSenF1.setText("");
+        txt_MagnitudSenF2.setText("");
+
+    }//GEN-LAST:event_btn_limpiarActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel Panel_Elemento2;
@@ -435,9 +453,12 @@ public class Elemento2 extends javax.swing.JPanel {
 
     //IMPLEMENTACION DE METODOS
    private double calcularResultante(double magnitudF1, double anguloF1, double magnitudF2, double anguloF2) {
-    // Realiza los cálculos para obtener la resultante
-    double resultante = Math.sqrt(Math.pow(magnitudF1 * Math.cos(Math.toRadians(anguloF1)) + magnitudF2 * Math.cos(Math.toRadians(anguloF2)), 2)
+    double resultado = Math.sqrt(Math.pow(magnitudF1 * Math.cos(Math.toRadians(anguloF1)) + magnitudF2 * Math.cos(Math.toRadians(anguloF2)), 2)
             + Math.pow(magnitudF1 * Math.sin(Math.toRadians(anguloF1)) + magnitudF2 * Math.sin(Math.toRadians(anguloF2)), 2));
+   
+    String redondeo = String.format("%.2f", resultado);
+        double resultante = Double.parseDouble(redondeo);
+        
     return resultante;
 }
    
@@ -478,7 +499,7 @@ public class Elemento2 extends javax.swing.JPanel {
     explicacion.append("  \n- Total Componente X:  (").append(componenteX_F1).append(" + ").append(componenteX_F2).append(" ) = ").append(componenteXTotal).append("\n\n");
     explicacion.append("  - Total Componente Y: (").append(componenteY_F1).append(" + ").append(componenteY_F2).append(") = ").append(componenteYTotal).append("\n\n");
 
-    // Paso 5: Se implementa el teorema de Pitágoras usando los valores de la suma de los componentes X y Y
+    // Paso 5: Se implementa el teorema de Pitagoras 
     double resultado = Math.sqrt(Math.pow(componenteXTotal, 2) + Math.pow(componenteYTotal, 2));
 
     explicacion.append("Paso 5: Aplicacion  del teorema de Pitagoras usando los valores de la suma de los componentes X y Y.\n");
@@ -487,7 +508,7 @@ public class Elemento2 extends javax.swing.JPanel {
     explicacion.append("  - Suma de los cuadrados: ").append(Double.toString(Math.pow(componenteXTotal, 2) + Math.pow(componenteYTotal, 2))).append("\n");
     explicacion.append("  - Aplicamos raiz cuadrada: ").append(Double.toString(resultado)).append("\n\n");
 
-    // Paso 6: Calcular y mostrar el ángulo de la resultante
+    // Paso 6: Calcular y mostrar el angulo de la resultante
     explicacion.append("Paso 6: Calcular y mostrar el angulo de la resultante.\n");
 
     double anguloRadianes = Math.atan2(componenteYTotal, componenteXTotal);
@@ -516,13 +537,16 @@ public class Elemento2 extends javax.swing.JPanel {
     double componenteXTotal = componenteX_F1 + componenteX_F2;
     double componenteYTotal = componenteY_F1 + componenteY_F2;
 
-    // Calcula el ángulo en radianes
+    // Calcula el angulo en radianes
     double anguloRadianes = Math.atan2(componenteYTotal, componenteXTotal);
 
-    // Convierte el ángulo de radianes a grados
+    // Convierte el angulo de radianes a grados
     double anguloGrados = Math.toDegrees(anguloRadianes);
 
-    return anguloGrados;
+       String redondeo = String.format("%.2f", anguloGrados);
+        double angulo = Double.parseDouble(redondeo);
+
+        return angulo;
 }
 
    public class DatosIncompletosException extends RuntimeException {

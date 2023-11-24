@@ -17,7 +17,7 @@ public class Resultado extends javax.swing.JFrame {
             }
         });
          
-       setVisible(true); // Asegúrate de que sea visible al crear una instancia
+       setVisible(true); 
 
        setResizable(false);
 
